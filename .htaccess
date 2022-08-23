@@ -1,0 +1,12 @@
+
+# Disable Directory Browsing
+# Options All -Indexes
+
+
+# Redirects
+Redirect 301 /login /login.php
+Redirect 301 /signup /signup.php
+Redirect 301 /otp /otp.php
+Redirect 301 /logout /logout.php
+
+Redirect 301 /?i=1 /
