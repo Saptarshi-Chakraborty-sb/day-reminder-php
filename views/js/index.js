@@ -26,10 +26,13 @@ let allReminders, numberOfReminders, currentEditingReminder, currentEditingId;
 
 // Do work when the HTML is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    infinityfreeSpecific();
+
     customTypeBox.style.display = 'none';
     addDays(31);
     // Check if the user is already logged in or not
     checkLogin();
+
 });
 
 // Click listner for Type of Days dropdown
@@ -620,4 +623,13 @@ function resetEdit() {
     submitBtnBox.innerHTML = `<button id="addReminderBtn" class=" btn btn-lg btn-primary mt-3">Set Reminder</button>`;
     formReset();
     pageHeading.innerText = "Schedule your Reminder for a Special Day";
+}
+
+function infinityfreeSpecific() {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+
+    if (url_string.includes("?i=1")) {
+        window.location.replace(`${url.origin}${url.pathname}`);
+    }
 }

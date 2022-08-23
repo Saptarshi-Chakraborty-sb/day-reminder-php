@@ -5,6 +5,8 @@ let emailField = document.getElementById('email');
 let btn = document.getElementById('submitBtn');
 
 document.addEventListener('DOMContentLoaded', () => {
+    infinityfreeSpecific();
+    
     checkLogin();
 });
 
@@ -58,9 +60,6 @@ btn.addEventListener('click', () => {
         alert(`${err}`);
         console.log(err);
     });
-
-
-
 });
 
 
@@ -139,5 +138,14 @@ function checkLogin() {
         `;
 
         window.location.replace('/');
+    }
+}
+
+function infinityfreeSpecific() {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+
+    if (url_string.includes("?i=1")) {
+        window.location.replace(`${url.origin}${url.pathname}`);
     }
 }

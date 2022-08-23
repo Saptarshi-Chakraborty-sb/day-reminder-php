@@ -6,6 +6,8 @@ let refcodeField = document.getElementById('code');
 let btn = document.getElementById('submitBtn');
 
 document.addEventListener('DOMContentLoaded', () => {
+    infinityfreeSpecific();
+    
     checkLogin();
 });
 
@@ -154,5 +156,14 @@ function checkLogin() {
         `;
 
         window.location.replace('/');
+    }
+}
+
+function infinityfreeSpecific() {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+
+    if (url_string.includes("?i=1")) {
+        window.location.replace(`${url.origin}${url.pathname}`);
     }
 }
