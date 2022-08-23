@@ -12,9 +12,6 @@ die;
 $email = $_POST['email'];
 $token = $_POST['token'];
 
-// $email = "sc.linkshortener.1@gmail.com";
-// $token = "aceyfggyrvgfrwyurgvfrfwrfvgrfwufvfwgf";
-
 ?>
 
 
